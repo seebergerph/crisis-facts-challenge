@@ -1,0 +1,5 @@
+{"qid":"query-1","rerank_query":"How many people are missing","query":"missing"}
+{"qid":"query-2","rerank_query":"What is the fire containment level","query":"containment"}
+{"qid":"query-3","rerank_query":"What roads are blocked \/ closed","query":"tree block road closures"}
+{"qid":"query-4","rerank_query":"What at-risk groups are being impacted","query":"Are there goods needing delivered"}
+{"qid":"query-5","rerank_query":"What events have been canceled","query":"canceled"}

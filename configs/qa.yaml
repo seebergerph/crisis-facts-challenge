@@ -1,0 +1,53 @@
+retriever:
+  name: "retriever"
+  params:
+    top_k: 100
+    model:
+      name: "terrier-retriever"
+      params:
+        config:
+          name: "terrier-retriever-config"
+          params:
+            wmodel: "BM25"
+            bo1_expansion: False
+            index_path: "index"
+            index_type: 3 # memory index
+            overwrite: True
+            meta: ["docno", "text", "source_type"]
+            meta_lengths: [40, 200, 30]
+            properties:
+              termpipelines: "Stopwords,PorterStemmer"
+
+reranker:
+  name: "reranker"
+  params:
+    top_k: 25
+    model:
+      name: "terrier-reranker"
+      params:
+        config:
+          name: "terrier-reranker-config"
+          params:
+            model_name_or_path: "paraphrase-MiniLM-L6-v2"
+            cross_encoder: False
+            max_length: 256
+            batch_size: 32
+            query_col: "rerank_query"
+
+rescorer:
+  name: "rescorer"
+  params:
+    ilp:
+      name: "ilp"
+      params:
+        max_budget: 30
+        min_budget: 1
+        concepts:
+          name: "entity-concepts"
+          params:
+            use_gpu: False
+    mmr:
+      name: "mmr"
+      params:
+        similarity: "cosine"
+        lambda_term: 0.8

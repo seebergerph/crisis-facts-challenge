@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Project Stuff
+experiments
+.index
+.nltk
+.stanza
+.sbert

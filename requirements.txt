@@ -1,0 +1,10 @@
+numpy
+pandas
+scikit-learn
+nltk
+stanza
+tweet-preprocessor
+wordsegment
+sentence-transformers
+python-terrier
+pulp
